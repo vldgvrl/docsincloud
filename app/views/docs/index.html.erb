@@ -1,0 +1,19 @@
+My Document in the Coloud
+<h1>Storage</h1>
+<p>
+<%= link_to "Add document", new_doc_path %>
+</p>
+<table>
+    <tr>
+        <th>Uploaded Files</th>
+    </tr>
+    <% for doc in @docs %>
+        <tr>
+            <td><%= link_to doc.attachment_was, doc.attachment_url %></td>
+            <td><%= link_to "Delete", doc, method: :delete, confirm: "Are you sure you want to delete #{doc.attachment_was}?" %></td>
+        </tr>
+    <% end %>
+</table>
+
+
+

@@ -1,0 +1,7 @@
+Gemfile
+node_modules/
+/tmp/
+log/
+package.json
+test/
+public/uploads/

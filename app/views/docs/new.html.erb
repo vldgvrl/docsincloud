@@ -1,0 +1,21 @@
+<div class="container">
+<% if !@doc.errors.empty? %>
+    <div>
+        <ul>
+            <% @doc.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>
+    <div>
+    <h3>Upload your file through this form</h3>
+    <%= form_for @doc, html: { multipart: true } do |f| %>
+        <%= f.label :attachment, "Upload file"%>
+        <%= f.file_field :attachment %>
+        <br>
+        <%= f.submit "Save" %>
+    <% end %>
+    </div>
+</div>
+
