@@ -23,8 +23,8 @@ development:
   reconnect: false
   database: docsincloud_development
   pool: 5
-  username: vladimir
-  password: pass123word
+  username: vladimir     
+  password: pass123word 
   socket: /var/run/mysqld/mysqld.sock
 
 
@@ -62,6 +62,8 @@ test:
 #
 production:
   <<: *default
-  database: docsincloud_production
-  username: docsincloud
-  password: <%= ENV['DOCSINCLOUD_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  host: localhost
+  database: <%= ENV['DATABASE_URL'] %>
+  username: user
+  password: app-dev
