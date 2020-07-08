@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2020_07_04_192119) do
 
-  create_table "docs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "docs", force: :cascade do |t|
     t.integer "user_id"
     t.string "name"
     t.string "attachment"
@@ -21,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_07_04_192119) do
     t.index ["user_id"], name: "index_docs_on_user_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
