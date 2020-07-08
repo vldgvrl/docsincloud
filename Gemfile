@@ -30,7 +30,7 @@ gem "nifty-generators", :group => :development
 #Bootstrap
 gem 'bootstrap', '~> 4.3.1'
 #jquery
-gem 'jquery-rails' 
+gem 'jquery-ui-rails' 
 #for uploading files
 gem 'carrierwave' 
 
