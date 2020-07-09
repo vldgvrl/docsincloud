@@ -3,7 +3,6 @@
   <head>
     <title>DocsInCloud | All documents in one place<%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
     <%= stylesheet_link_tag "application" %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
   </head>
